@@ -18,15 +18,6 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <fragment
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="320dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:context=".MapsActivity" />
 
         <EditText
             android:id="@+id/textView"
@@ -38,7 +29,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/map"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/app_name" />
 
         <Button

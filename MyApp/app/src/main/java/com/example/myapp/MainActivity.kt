@@ -12,9 +12,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
-private const val LOG_TAG_YENTED = "LOG_TAG_YENTED"
+private const val LOG_TAG_YENTED = "YENTED"
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
 
@@ -32,17 +32,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             Log.d("LOG_TAG_YENTED", it)
         })
 
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
 
-    }
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions()
-                .position(sydney)
-                .title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 }

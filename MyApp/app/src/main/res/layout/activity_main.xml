@@ -16,7 +16,6 @@
         android:background="@color/white"
         tools:context=".MainActivity">
 
-
         <EditText
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -24,7 +23,7 @@
             android:layout_marginTop="16dp"
             android:text="@={viewModel.timer}"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/purple_700"
-            android:onClick="@{()-> viewModel.write()}"
+            android:onClick="@{()->viewModel.write()}"
             android:text="@string/next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

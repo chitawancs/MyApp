@@ -5,17 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.myapp.MainViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         tools:context=".MainActivity">
 
 
@@ -42,7 +40,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
-
         </Button>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

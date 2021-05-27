@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.myapp.MainViewModel" />
@@ -16,29 +17,82 @@
         android:background="@color/white"
         tools:context=".MainActivity">
 
-        <EditText
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@={viewModel.timer}"
-            android:textColor="@color/black"
-            android:textSize="16sp"
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/app_name" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <fragment
+                android:id="@+id/autocomplete_fragment"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_placeholder"
+            android:translationY="-24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        <com.mancj.materialsearchbar.MaterialSearchBar-->
+        <!--            android:id="@+id/searchBar"-->
+        <!--            style="@style/MaterialSearchBarLight"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="12dp"-->
+        <!--            android:layout_marginTop="56dp"-->
+        <!--            android:layout_marginEnd="12dp"-->
+        <!--            android:elevation="5dp"-->
+        <!--            android:outlineProvider="bounds"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:mt_hint="Search"-->
+        <!--            app:mt_maxSuggestionsCount="10"-->
+        <!--            app:mt_navIconEnabled="true"-->
+        <!--            app:mt_placeholder="Search " />-->
 
         <Button
-            android:id="@+id/buttonMyapp"
-            android:layout_width="wrap_content"
+            android:id="@+id/pin"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple_700"
-            android:onClick="@{()->viewModel.write()}"
-            android:text="@string/next"
+            android:layout_marginStart="56dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="PIN"
+            app:layout_constraintBottom_toBottomOf="@+id/map"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintStart_toStartOf="parent">
+
         </Button>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
